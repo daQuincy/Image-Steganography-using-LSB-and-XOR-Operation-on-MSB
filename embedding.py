@@ -32,13 +32,15 @@ m_img[m_img>0] = 1
 
 # step 2: change the pixel value to binary
 c_flatten = c_img.flatten()
-c_flatten = [np.binary_repr(x, width=8) for x in c_flatten]
+#c_flatten = [np.binary_repr(x, width=8) for x in c_flatten]
 
-m_flatten = np.reshape(m_img, (-1,)).tolist()
+m_flatten = np.reshape(m_img, (-1,))
 
 
 out = []
 for a, b in zip(c_flatten, m_flatten):
+    a = np.binary_repr(a, width=8)
+
     # step 3: perform XOR operations on the 7th and on the 6th bit    
     xor_a = int(a[1]) ^ int(a[2])
     

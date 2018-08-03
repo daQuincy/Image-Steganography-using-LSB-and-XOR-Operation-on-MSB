@@ -21,10 +21,12 @@ stego_img = cv2.imread(args["stego_image"], 0)
 
 # step 2: change pixel value to binary
 stego_flatten = stego_img.flatten()
-stego_flatten = [np.binary_repr(x, width=8) for x in stego_flatten]
+#stego_flatten = [np.binary_repr(x, width=8) for x in stego_flatten]
 
 out = []
 for x in stego_flatten:
+    x = np.binary_repr(x, width=8)
+
     # step 3: perform XOR on 7th and 6th bits
     xor_a = int(x[1]) ^ int(x[2])
     
