@@ -3,7 +3,6 @@ A dirty implementation of the research paper "Simple and Secure Image Steganogra
 
 embedding.py
 ```
-(tf) C:\Users\YQ\Documents\Image-Steganography-using-LSB-and-XOR-Operation-on-MSB>python embedding.py -h
 usage: embedding.py [-h] -c COVER_IMAGE -m MESSAGE_IMAGE -s STEGO_IMAGE
 
 optional arguments:
@@ -19,7 +18,6 @@ optional arguments:
 
 extraction.py
 ```
-(tf) C:\Users\YQ\Documents\Image-Steganography-using-LSB-and-XOR-Operation-on-MSB>python extraction.py -h
 usage: extraction.py [-h] -s STEGO_IMAGE -r RECOVER_IMAGE
 
 optional arguments:
