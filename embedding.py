@@ -19,13 +19,10 @@ ap.add_argument("-s", "--stego_image", required=True,
 args = vars(ap.parse_args())
 
 # step 1: read the cover image and message image
-c = args["cover_image"]
-m = args["message_image"]
-
-c_img = cv2.imread(c, 0)
+c_img = cv2.imread(args["cover_image"], 0)
 c_img = cv2.resize(c_img, (256, 256))
 
-m_img = cv2.imread(m, 0)
+m_img = cv2.imread(args["message_image"], 0)
 m_img = cv2.resize(m_img, (256, 256))
 m_img[m_img>0] = 1
 
@@ -36,7 +33,7 @@ c_flatten = c_img.flatten()
 
 m_flatten = np.reshape(m_img, (-1,))
 
-
+# https://stackoverflow.com/questions/1523465/binary-numbers-in-python
 out = []
 for a, b in zip(c_flatten, m_flatten):
     a = np.binary_repr(a, width=8)
