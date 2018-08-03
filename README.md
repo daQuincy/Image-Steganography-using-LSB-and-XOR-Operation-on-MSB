@@ -27,3 +27,5 @@ optional arguments:
   -r RECOVER_IMAGE, --recover_image RECOVER_IMAGE
                         path to save recovered image
 ```                        
+
+Refer to Jupyter Notebook for more details.
